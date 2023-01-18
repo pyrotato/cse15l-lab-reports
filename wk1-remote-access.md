@@ -25,4 +25,4 @@ Alright, let's test out some commands. Remember the meaning of different command
 
 ![Image](commandsexample.png)
 
-And that's it! Hope that was informative, or nostalgic to me-of-the-future.
+And that's it for Week 1: Remote Access! Hope that was informative, or nostalgic to me-of-the-future.
