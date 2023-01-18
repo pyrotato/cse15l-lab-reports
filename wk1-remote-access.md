@@ -13,7 +13,7 @@ To install VSCode, go to [this site](https://code.visualstudio.com/) and downloa
 
 # Remotely Connecting
 
-Great! You know have VSCode. To remotely connect to a lab computer, open a new terminal window using the Terminal > New Terminal option in the top bar of the window. Type in `ssh cs15lwi23$$$@ieng6.ucsd.edu` into the terminal, with the $$$ being replaced with your course specific account numbers (mine is/was `agd`). If this is your first time, you may be given a `yes/no` prompt; just respond `yes`. Now, you should type in your password to the account; don't sweat it if it takes a few times, the system is finicky like that (read: my clumsy fingers didn't get it right the first 20 tries). The password won't be available because, well, it's a password. It'll be hidden, just like when websites fill in your passwords with a bunch of dots or \*\*\*\*\*\*\*\*\*\*\*\*.
+Great! You now have VSCode. To remotely connect to a lab computer, open a new terminal window using the Terminal > New Terminal option in the top bar of the window. Type in `ssh cs15lwi23$$$@ieng6.ucsd.edu` into the terminal, with the $$$ being replaced with your course specific account numbers (mine is/was `agd`). If this is your first time, you may be given a `yes/no` prompt; just respond `yes`. Now, you should type in your password to the account; don't sweat it if it takes a few times, the system is finicky like that (read: my clumsy fingers didn't get it right the first 20 tries). The password won't be available because, well, it's a password. It'll be hidden, just like when websites fill in your passwords with a bunch of dots or \*\*\*\*\*\*\*\*\*\*\*\*.
 
 Now that you've made it in, congrats! You should see something like the message printed below:
 
