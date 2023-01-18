@@ -7,7 +7,7 @@ Whether you're my future self, another hypothetical 15L student who somehow foun
 
 # Installing VSCode
 
-To install VSCode, go to [this site](https://code.visualstudio.com/) and download the version of VSCode that you're looking for. Install VSCode through the download file and, once it's finished installing, any other extensions you may want for your purpose. Extensions and themes can be found in the sidebar under the magnifying glass icon. Personally, I didn't complete this step because I already had VSCode installed with all the necessary extensions that I wanted.
+To install VSCode, go to [this site](https://code.visualstudio.com/) and download the version of VSCode that you're looking for. Install VSCode through the download file and, once it's finished installing, add any other extensions you may want for your purpose. Extensions and themes can be found in the sidebar under the magnifying glass icon. Personally, I didn't complete this step because I already had VSCode installed with all the necessary extensions that I wanted.
 
 ![Image](downloadingvscode.png)
 
