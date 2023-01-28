@@ -27,7 +27,7 @@ Now that you've made it in, congrats! You should see something like this printed
 
 # Trying Some Commands
 
-Alright, let's test out some commands. Remember the meaning of different commands in terminal: 
+Alright, let's test out some commands. Remember the meaning of different commands in Terminal: 
 
 * `cd` means "change directory" and lets you enter or exit directories with a path 
 * `ls` means "list" and shows you files and folders in the current location
@@ -38,7 +38,7 @@ Alright, let's test out some commands. Remember the meaning of different command
 Additionally, when it comes to paths:
 
 * `~` refers to your home directory
-* `..` means to take a step back into the parent directory of your current directory
+* `..` means to take a step back into the parent of your current directory
 
 ![Image](commandsexample.png)
 
