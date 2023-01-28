@@ -33,7 +33,7 @@ Alright, let's test out some commands. Remember the meaning of different command
 * `ls` means "list" and shows you files and folders in the current location
 * `mkdir` creates a directory (makes a folder).
 * `cp` lets you copy files and directories
-* `cat` is short for concatenate and lets you 
+* `cat` is short for concatenate and lets you print a text file's contents, among other things
 
 Additionally, when it comes to paths:
 
