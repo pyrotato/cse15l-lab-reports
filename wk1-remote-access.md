@@ -44,6 +44,6 @@ Additionally, when it comes to paths:
 
 # Closing Remarks
 
-Remoting into a computer is a pretty common practice and is pretty helpful to know about, especially during a time when remote work is becoming more and more popular (at the time of writing this). Chances are, you'll have to do it at some point in your career, so it's just a nice thing to know. Hopefully this tutorial was helpful, and if any particular situations or issues pop up, it may be helpful to look at documentation just to make sure you don't run `rm -rf /` on your system.
+Remoting into a computer is a pretty common practice and is helpful to know about, especially during a time when remote work is becoming more and more popular (at the time of writing this). Chances are, you'll have to do it at some point in your career, so it's just a nice thing to know. Hopefully this tutorial was helpful, and if any particular situations or issues pop up, it may be helpful to look at documentation just to make sure you don't run `rm -rf /` on your system.
 
 Maybe you might though, just for fun. Try it, who knows what will happen?
