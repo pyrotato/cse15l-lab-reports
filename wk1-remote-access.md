@@ -7,7 +7,7 @@ Whether you're my future self, another hypothetical 15L student who somehow foun
 
 # Installing VSCode
 
-To install VSCode, go to [this site](https://code.visualstudio.com/) and download the version of VSCode that you're looking for. Once the file is done downloading, run it (either by clicking on it in File Explorer or using the bottom bar that pops up in your browser) and accept any agreements that the installer poses at you. Click next until VSCode starts to install, though when you reach the "Select Destination Location" step, make sure that VSCode is installing into the right directory where you want it.
+To install VSCode, go to [this site](https://code.visualstudio.com/) and download the right version depending on your operating system. Once the file is done downloading, run it (either by clicking on it in File Explorer/your File Explorer equivalent or using the bottom bar that pops up in your browser) and accept any agreements that the installer brings up. Click next until VSCode starts to install, though when you reach the "Select Destination Location" step, make sure that it's installing into the right directory that you want it to be at.
 
 > NOTE: You may eventually reach a step where the installation wizard asks if you want to Add "Open with Code" action to Windows Explorer file context menu/Windows Explorer directory context menu. CHECK THAT OPTION. It will let you open projects from your file system.
 
