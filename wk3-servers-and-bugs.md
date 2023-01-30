@@ -57,7 +57,9 @@ class StringServer {
 }
 ```
 
-There's only about 46 lines to `StringServer.java`. What it does is display strings placed in a formatted query in the URL on the page. For example:
+There's only about 46 lines to `StringServer.java`. What it does is display strings placed in a formatted query in the URL on the page. 
+
+For example:
 
 ## Scenario 1
 ![Image](addmsg1.png)
