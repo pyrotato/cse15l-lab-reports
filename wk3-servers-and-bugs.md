@@ -2,13 +2,13 @@
 ---
 
 
-Something I forgot to mention last time: these pages will be updated biweekly over the course of a 10 week quarter as per UCSD's quarter system. That's why you might see the title of some of these pages skipping weeks, like "Week 1", "Week 3", and such.
+Something I forgot to mention last time: these pages will be updated biweekly over the course of a 10 week quarter as per UCSD's quarter system. That's why you might see the title of some of these pages skipping weeks, like "Week 1", "Week 3", etc.
 
-In any case, this week, we're going over creating web servers and fixing bugs, so let's get into it.
+In any case, this week we're going over creating web servers and fixing bugs, so let's get into it.
 
 # Writing a Web Server
 
-For the task of writing a web server, I created this file called `StringServer.java` and compiled it along with another file called `Server.java`. My code for `StringServer.java` was based off of Week 2's lab, particularly in Professor Joe Politz's [wavelet repository]([https://code.visualstudio.com/](https://github.com/ucsd-cse15l-f22/wavelet)).
+For the task of writing a web server, I created this file called `StringServer.java` and compiled it along with another file called `Server.java`. My code for `StringServer.java` was based off of Week 2's lab, particularly in Professor Joe Politz's [wavelet repository](https://github.com/ucsd-cse15l-f22/wavelet).
 ```
 // Creates web server that tracks string input made through queries in the URL
 // Sources: CSE 15L Lab 2, wavelet by Prof. Joe Politz: 
