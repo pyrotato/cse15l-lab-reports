@@ -8,7 +8,7 @@ In any case, this week we're going over creating web servers and fixing bugs, so
 
 # Writing a Web Server
 
-For the task of writing a web server, I created this file called `StringServer.java` and compiled it along with another file called `Server.java`. My code for `StringServer.java` was based off of Week 2's lab, particularly in Professor Joe Politz's [wavelet repository](https://github.com/ucsd-cse15l-f22/wavelet).
+For the task of writing a web server, I created this file called `StringServer.java` and compiled it along with another file called `Server.java`. My code for `StringServer.java` was based off of Week 2's lab, particularly from the files in Professor Joe Politz's [wavelet repository](https://github.com/ucsd-cse15l-f22/wavelet).
 ```
 // Creates web server that tracks string input made through queries in the URL
 // Sources: CSE 15L Lab 2, wavelet by Prof. Joe Politz: 
@@ -57,7 +57,7 @@ class StringServer {
 }
 ```
 
-There's only about 46 lines to `StringServer.java`, but essentially what is does is display strings placed in a formatted query in the URL on the page. For example:
+There's only about 46 lines to `StringServer.java`. What it does is display strings placed in a formatted query in the URL on the page. For example:
 
 ## Scenario 1
 ![Image](addmsg1.png)
@@ -77,8 +77,8 @@ Once the server is running, the `handleRequest()` method is called, which takes 
 In the case of the above scenarios where a query is passed into the URL with the format `/add-message?s=<String to be added>`, the function then verifies that the URL does contain `/add-message` before splitting the path's query with `=` as a delimiter. This split value is saved to an array of strings known as `parameters`.
 
 If the 0 index of `parameters` equals `s`, the method then checks for if a Stringbuilder variable called `msg` is empty. From this point on, the scenarios diverge:
-* For Scenario 1, since `msg` was empty, handlerequest appends the 1st index of `parameters` to `msg`
-* For Scenario 2, since `msg` already held a string, handlerequest appends the 1st index of `parameters` to `msg` after prepending the `\n` character to it
+* For Scenario 1, since `msg` was empty, `handlerequest()` appends the 1st index of `parameters` to `msg`
+* For Scenario 2, since `msg` already held a string, `handlerequest()` appends the 1st index of `parameters` to `msg` after prepending the `\n` character to it
 
 Following this, what happens is the same for either scenario: the site then displays the entirety of `msg` after the string query in the URL has been added.
 
@@ -126,7 +126,7 @@ static void reverseInPlace(int[] arr) {
 }
 ```
 
-At a quick glance, it looks like the code is doing what it's meant to do: it's iterating through the array from start to finish and reassigning values from the end to the beginning. If we trace the code to further understand the problem, we realize that once `i` from the for loop passes the halfway mark in `arr.length`, the loop starts referencing values that have already been rewritten in order to finish the array. That means that every time, around half of the array is incorrectly reversed because the loop no longer had an accurate reference point, like if you tried to copy a manuscript but someone patched in the second half with the first half reversed once you got halfway.
+At a quick glance, it looks like the code is doing what it's meant to do: it's iterating through the array from start to finish and reassigning values from the end to the beginning. If we trace the code to further understand the problem, we realize that once `i` from the for loop passes the halfway mark in `arr.length`, the loop starts referencing values that have already been rewritten in order to finish the array. That means that every time, around half of the array is incorrectly reversed because the loop no longer has an accurate reference point, like if you tried to copy a manuscript but someone patched in the second half with the first half reversed once you got halfway.
 
 So how can we fix this?
 
@@ -147,4 +147,4 @@ By making a deep copy (`temp`) of the array that we're reversing, we can avoid a
 
 # Closing Remarks: What Have We Learned?
 
-There's been a lot to learn over these past 2 weeks, what with Labs 1 & 2. For example, I now know how to create a web server from Java that provides responses to queries in the URL, and how to distinguish between flawed methods that cause JUnit to throw errors vs. flawed JUnit test cases that don't reflect the functionality of Java or the method it's testing. However, one of the biggest things that stood out to me was from Lab 2 with trying to run a web server off of the remote computers. It was confusing trying to figure out how to test the programs without access to `localhost` until I spoke with my group and realized that we had to use the names of the computers in the URLs (for example: ieng6-420.ucsd.edu:INSERT_PORT_NUMBER_HERE). Though the scope of what we did in Lab 2 was pretty small, I think I have a greater interest in learning about networking now.
+There's been a lot to learn over these past 2 weeks, what with Labs 2 & 3. For example, I now know how to create a web server from Java that provides responses to queries in the URL, and how to distinguish between flawed methods that cause JUnit to throw errors vs. flawed JUnit test cases that don't reflect the functionality of Java or the method it's testing. However, one of the biggest things that stood out to me was from Lab 2 with trying to run a web server off of the remote computers. It was confusing trying to figure out how to test the programs without access to `localhost` until I spoke with my group and realized that we had to use the names of the computers in the URLs (for example: ieng6-420.ucsd.edu:INSERT_PORT_NUMBER_HERE). Though the scope of what we did in Lab 2 was pretty small, I think I have a greater interest in learning about networking now.
