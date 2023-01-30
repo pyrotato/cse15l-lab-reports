@@ -59,10 +59,10 @@ class StringServer {
 
 There's only about 46 lines to `StringServer.java`, but essentially what is does is display strings placed in a formatted query in the URL on the page. For example:
 
-Scenario 1
+## Scenario 1
 ![Image](addmsg1.png)
 
-Scenario 2
+## Scenario 2
 ![Image](addmsg2.png)
 
 
@@ -72,7 +72,7 @@ It also displays these messages on the home page, too:
 
 When starting the server, the main method runs; first, it checks that the argument made while starting the process is an open port. If not, it prints a message to console. Otherwise, it parses the port as an integer and starts the server on that port.
 
-Once the server is running, the handleRequest method is called, which takes an argument of a URI object called `url`. Then, the method checks for the path. If the path amounts to `/`, the method returns a list of all messages formatted under a line that reads `Messages:`.
+Once the server is running, the `handleRequest()` method is called, which takes an argument of a URI object called `url`. Then, the method checks for the path. If the path amounts to `/`, the method returns a list of all messages formatted under a line that reads `Messages:`.
 
 In the case of the above scenarios where a query is passed into the URL with the format `/add-message?s=<String to be added>`, the function then verifies that the URL does contain `/add-message` before splitting the path's query with `=` as a delimiter. This split value is saved to an array of strings known as `parameters`.
 
@@ -85,37 +85,66 @@ Following this, what happens is the same for either scenario: the site then disp
 Throughout this entire process, there are three fields whose values consistently change:
 * Stringbuilder `msg`, which constantly saves new strings from queries made in the URL
 * String[] `parameters`, which results from splitting the query in the URL
-* URI `url`, the argument for the handleRequest method, which changes with new queries made but can also not contain the path `/add-message` at all
+* URI `url`, the argument for the `handleRequest()` method, which changes with new queries made but can also not contain the path `/add-message` at all
 
-# Remotely Connecting
+# Debugging for Lab 3
 
-Great! You now have VSCode. To remotely connect to a lab computer, open a new terminal window using the Terminal > New Terminal option in the top bar of the window. Type in `ssh cs15lwi23$$$@ieng6.ucsd.edu` into the terminal, with the $$$ being replaced with your course specific account numbers (mine is/was `agd`). If this is your first time, you may be given a `yes/no` prompt; just respond `yes`. Now, you should type in your password to the account; don't sweat it if it takes a few times, the system is finicky like that (read: my clumsy fingers didn't get it right the first 20 tries). 
+Lab 3 had a particular focus on debugging. One of bugs that I found interesting from that lab was in a file that centered around modifying arrays, particularly a method that would reverse the array's value called `reverseInPlace()`, which took the integer array to be reversed as an argument. During the lab, we were given the opportunity to use JUnit to write some test cases that would help with debugging the method. Here are some of them:
 
-> NOTE: The password may not be showing for you in Terminal, and that's okay, because it's a password. It'll be hidden, just like when websites hide your passwords with a bunch of dots or \*\*\*\*\*\*\*\*\*\*\*\*.
+## Non-failure Inducing Inputs
+```
+int[] input1 = { 3 };
+int[] input2 = { 2, 5, 2 };
+ArrayExamples.reverseInPlace(input1);
+ArrayExamples.reverseInPlace(input2);
+assertArrayEquals(new int[]{ 3 }, input1);
+assertArrayEquals(new int[]{ 2, 5, 2 }, input2);
+```
 
-Now that you've made it in, congrats! You should see something like this printed to Terminal:
+## Failure Inducing Inputs
+```
+int[] input3 = { 2, 4, 6 };
+ArrayExamples.reverseInPlace(input3);
+assertArrayEquals(new int[]{ 6, 4, 2 }, input3);
+```
 
-![Image](terminal.png)
+> Note: All of the above were contained in a tester method in a seperate file called `testReverseInPlace()`.
 
-# Trying Some Commands
+Of course, running the failure test case from above caused an issue, as seen below: 
 
-Alright, let's test out some commands. Remember the meaning of different commands in Terminal: 
+![Image](failure.png)
 
-* `cd` means "change directory" and lets you enter or exit directories with a path 
-* `ls` means "list" and shows you files and folders in the current location
-* `mkdir` creates a directory (makes a folder).
-* `cp` lets you copy files and directories
-* `cat` is short for concatenate and lets you print a text file's contents, among other things
+Instead of the expected number at index 2, which was 6, the array encountered the number 2 instead. Now, why is that? Take a look at the `reverseInPlace()` method and see if you can figure it out:
 
-Additionally, when it comes to paths:
 
-* `~` refers to your home directory
-* `..` means to take a step back into the parent of your current directory
+## Before Fixing the Bug
+```
+static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+}
+```
 
-![Image](commandsexample.png)
+At a quick glance, it looks like the code is doing what it's meant to do: it's iterating through the array from start to finish and reassigning values from the end to the beginning. If we trace the code to further understand the problem, we realize that once `i` from the for loop passes the halfway mark in `arr.length`, the loop starts referencing values that have already been rewritten in order to finish the array. That means that every time, around half of the array is incorrectly reversed because the loop no longer had an accurate reference point, like if you tried to copy a manuscript but someone patched in the second half with the first half reversed once you got halfway.
 
-# Closing Remarks
+So how can we fix this?
 
-Remoting into a computer is a pretty common practice and is helpful to know about, especially during a time when remote work is becoming more and more popular (at the time of writing this). Chances are, you'll have to do it at some point in your career, so it's just a nice thing to know. Hopefully this tutorial was helpful, and if any particular situations or issues pop up, it may be helpful to look at documentation just to make sure you don't run `rm -rf /` on your system.
+## After Fixing the Bug
+```
+static void reverseInPlace(int[] arr) {
+    int[] temp = new int[arr.length];
+    for (int i = 0; i < arr.length; i++) {
+      temp[i] = arr[i];
+    }
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = temp[arr.length - i - 1];
+    }
+}
+```
 
-Maybe you might though, just for fun. Try it, who knows what will happen?
+By making a deep copy (`temp`) of the array that we're reversing, we can avoid all the issues that come with directly editing the array while referencing it. Because this deep copy doesn't change, we can use it to rewrite the original array with ease without having to worry about overwriting important data. When writing loops to reverse or otherwise modify array data, this mistake can be pretty common. In my first CSE class at UCSD, I had to contend with a Stepik problem that had a very similar bugged code question and spent a solid hour trying to figure out what was wrong with it. These kinds of problems emphasize the importance of tracing your code to find flaws in your logic.
+
+# Closing Remarks: What Have We Learned?
+
+There's been a lot to learn over these past 2 weeks, what with Labs 1 & 2. For example, I now know how to create a web server from Java that provides responses to queries in the URL, and how to distinguish between flawed methods that cause JUnit to throw errors vs. flawed JUnit test cases that don't reflect the functionality of Java or the method it's testing. However, one of the biggest things that stood out to me was from Lab 2 with trying to run a web server off of the remote computers. It was confusing trying to figure out how to test the programs without access to `localhost` until I spoke with my group and realized that we had to use the names of the computers in the URLs (for example: ieng6-420.ucsd.edu:INSERT_PORT_NUMBER_HERE). Though the scope of what we did in Lab 2 was pretty small, I think I have a greater interest in learning about networking now.
