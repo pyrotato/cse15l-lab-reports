@@ -1,4 +1,4 @@
-# Week 5 (2023-01-12) - Remote Access
+# Week 5 (2023-01-12) - Researching CMDs
 
 ---
 

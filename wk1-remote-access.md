@@ -13,7 +13,7 @@ To install VSCode, go to [this site](https://code.visualstudio.com/) and downloa
 
 Once it's finished installing, add any other extensions you may want for your purpose. Extensions and themes can be found in the sidebar under the magnifying glass icon. Personally, I didn't complete these steps because I already had VSCode installed with all the necessary extensions that I wanted.
 
-![Image](images/wk1/downloadingvscode.png)
+![The download page for VSCode](./imgs/wk1/downloadingvscode.png)
 
 # Remotely Connecting
 
@@ -23,7 +23,7 @@ Great! You now have VSCode. To remotely connect to a lab computer, open a new te
 
 Now that you've made it in, congrats! You should see something like this printed to Terminal:
 
-![Image](images/wk1/terminal.png)
+![Terminal with successful SSH login](./imgs/wk1/terminal.png)
 
 # Trying Some Commands
 
@@ -40,7 +40,7 @@ Additionally, when it comes to paths:
 * `~` refers to your home directory
 * `..` means to take a step back into the parent of your current directory
 
-![Image](images/wk1/commandsexample.png)
+![Examples of bash command usage](./imgs/wk1/commandsexample.png)
 
 # Closing Remarks
 

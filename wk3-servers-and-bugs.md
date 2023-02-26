@@ -64,15 +64,15 @@ There's only about 46 lines to `StringServer.java`. So what does it do?
 For example:
 
 ## Scenario 1
-![Image](imgs/wk3/addmsg1.png)
+![Locally hosted page: add message "Never Gonna Give You Up"](./imgs/wk3/addmsg1.png)
 
 ## Scenario 2
-![Image](imgs/wk3/addmsg2.png)
+![Locally hosted page: add message "Never Gonna Let You Down"](./imgs/wk3/addmsg2.png)
 
 
 It also displays these messages on the home page, too:
 
-![Image](imgs/wk3/mainpage2.png)
+![Home page after adding both messages](./imgs/wk3/mainpage2.png)
 
 When starting the server, the main method runs; first, it checks that the argument made while starting the process is an open port. If not, it prints a message to console. Otherwise, it parses the port as an integer and starts the server on that port.
 
@@ -116,7 +116,7 @@ assertArrayEquals(new int[]{ 6, 4, 2 }, input3);
 
 Of course, running the failure test case from above caused an issue, as seen below: 
 
-![Image](imgs/wk3/failure.png)
+![Result of running a failure test case in JUnit](./imgs/wk3/failure.png)
 
 Instead of the expected number at index 2, which was 6, the array encountered the number 2 instead. Now, why is that? Take a look at the `reverseInPlace()` method and see if you can figure it out:
 
